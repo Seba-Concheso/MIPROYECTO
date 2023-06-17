@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Computer Sale</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../assets/css/estilos.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <div>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Acerca</a></li>
+          <li><a href="#">Categorias</a></li>
+          <li><a href="#">Contacto</a></li>
+        </div>
+        <div class="li">
+          <a href="#"><img class="img" src="../../assets/img/logo.jpeg" alt="Logo" /></a>
+        </div>
+      </ul>
+    </nav>
+    <h1 class="h1">Productos</h1>
+    <form class="form">
+      <h3 class="h3">Formulario para alta de productos</h3>
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" placeholder="Nombre del producto" required />
+      <label for="descripcion">Descripción</label>
+      <input type="text" name="descripcion" placeholder="Descripción del producto" required />
+      <label for="precio">Precio</label>
+      <input type="number" name="precio" placeholder="Precio del producto" required />
+      <label for="categoria">Categoría</label>
+      <select name="categoria" required>
+        <option value="1">Categoría 1</option>
+        <option value="2">Categoría 2</option>
+        <option value="3">Categoría 3</option>
+        <option value="4">Categoría 4</option>
+        <option value="5">Categoría 5</option>
+      </select>
+      <label for="imagen">Imagen</label>
+      <input type="file" name="imagen" placeholder="Imagen del producto" required />
+      <div class="div">
+        <input class="button" type="submit" value="Guardar" />
+        <input type="button" class="button" value="Cancelar" />
+      </div>
+      <div class="div">
+        <h3 class="h3">Sebastián Concheso</h3>
+      </div>
+    </form>
+  </body>
+</html>
