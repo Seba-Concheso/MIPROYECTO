@@ -22,24 +22,25 @@
       </ul>
     </nav>
     <h1 class="h1">Productos</h1>
-    <form class="form">
+    <form class="form" id="form_product" method="POST">
       <h3 class="h3">Formulario para alta de productos</h3>
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" placeholder="Nombre del producto" required />
+      <label for="nombre_producto">Nombre</label>
+      <input type="text" name="nombre" id="nombre_producto" placeholder="Nombre del producto" required autocomplete="off" />
       <label for="descripcion">Descripción</label>
-      <input type="text" name="descripcion" placeholder="Descripción del producto" required />
+      <input type="text" name="descripcion" id="descripcion" placeholder="Descripción del producto" required autocomplete="off" />
       <label for="precio">Precio</label>
-      <input type="number" name="precio" placeholder="Precio del producto" required />
+      <input type="number" name="precio" id="precio" placeholder="Precio del producto" required autocomplete="off" />
       <label for="categoria">Categoría</label>
-      <select name="categoria" required>
-        <option value="1">Categoría 1</option>
-        <option value="2">Categoría 2</option>
-        <option value="3">Categoría 3</option>
-        <option value="4">Categoría 4</option>
-        <option value="5">Categoría 5</option>
+      <select name="categoria" id="categoria" required>
+        <option disabled="" selected="">Seleccionar</option>
+        <option value="1">Monitores</option>
+        <option value="2">PC de escritorio</option>
+        <option value="3">notebooks</option>
+        <option value="4">Tablets</option>
+        <option value="5">Otros</option>
       </select>
       <label for="imagen">Imagen</label>
-      <input type="file" name="imagen" placeholder="Imagen del producto" required />
+      <input type="file" name="imagen" id="imagen" placeholder="Imagen del producto" required autocomplete="off" />
       <div class="div">
         <input class="button" type="submit" value="Guardar" />
         <input type="button" class="button" value="Cancelar" />
@@ -48,5 +49,11 @@
         <h3 class="h3">Sebastián Concheso</h3>
       </div>
     </form>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/validaciones.js" type="text/javascript"></script>
   </body>
 </html>
