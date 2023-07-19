@@ -21,7 +21,7 @@ $("form#form_product").on("submit", function (event) {
   event.preventDefault();
   const nombre = $.trim($("#nombre_producto").val());
   const descripcion = $.trim($("#descripcion").val());
-  const precio = $.trim($("#precio").val());
+  const precio = parseInt($.trim($("#precio").val()));
   const categoria = $($("#categoria").val());
 
   const error = new Array();

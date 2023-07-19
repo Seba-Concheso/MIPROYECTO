@@ -24,9 +24,10 @@
 
     <h1 class="h1">Categorías</h1>
     <form id="form_categoria" class="form" method="POST">
+      <input type="hidden" name="accion" value="guardar" />
       <h3 class="h3">Formulario para alta de categoría</h3>
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Nombre de la categoria" required autocomplete="off" />
+      <label for="nombre_categoria">Nombre</label>
+      <input type="text" id="nombre" name="nombre_categoria" placeholder="Nombre de la categoria" required autocomplete="off" />
       <div class="div">
         <input class="button" type="submit" value="Guardar" />
         <input class="button" type="button" value="Cancelar" />

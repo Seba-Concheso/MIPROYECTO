@@ -31,10 +31,12 @@
       <label for="precio">Precio</label>
       <input type="number" name="precio" id="precio" placeholder="Precio del producto" required autocomplete="off" />
       <label for="categoria">Categoría</label>
-      <select name="categoria" id="categoria" required>
-        <?php foreach ($categorias as $categoria) ( ?>
-        <option value="<?php echo $categoria['id'] ?>"><?php echo $categoria["nombre"]?></option>
-        <?php )?>
+      <select name="categoria" id="categoria" required="">
+        <option value="">Seleccione una categoría</option>
+        <!-- <option value="1">Computadoras</option> -->
+        <?php foreach ($categorias as $categoria) {  ?>
+        <option value="<?php echo $categoria['id'] ?>"><?php echo $categoria['nombre_categoria'] ?></option>
+        <?php } ?>
       </select>
       <label for="imagen">Imagen</label>
       <input type="file" name="imagen" id="imagen" placeholder="Imagen del producto" required autocomplete="off" />
