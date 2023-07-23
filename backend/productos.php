@@ -13,13 +13,11 @@ if (isset($_POST['accion']) && $_POST['accion'] == 'guardar') {
     $producto->precio = $_POST['precio'];
     $producto->categoria = $_POST['categoria_id'];
     $producto->descripcion = $_POST['descripcion'];
-    $prducto->imagen = $_POST['imagen'];
-    if ($producto->guardar()) {
-        llamarListado();
-        echo "guardado";
-    } else {
-        echo "error al guardar";
-    }
+    // $prducto->imagen = $_FILES['imagen'];
+    $producto->guardar();
+    llamarListado();
+    echo "guardado";
+    die();
 }
 if (isset($_GET['accion']) && $_GET['accion'] == 'agregar') {
     include '../backend/view/productos.html';
@@ -27,7 +25,11 @@ if (isset($_GET['accion']) && $_GET['accion'] == 'agregar') {
 }
 
 
-
+function llamarListado()
+{
+    $productos = productos::listar();
+    include '../backend/view/listas_productos.html';
+}
 $productos = productos::listar();
 include './view/listas_productos.html';
 
