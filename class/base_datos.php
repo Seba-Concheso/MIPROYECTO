@@ -1,4 +1,14 @@
-<?php
+<?php  /* @Sebastián Concheso */
+
+// try {
+//     $conector = new PDO("mysql:dbname=miproyecto;host=localhost:3306", "root", "");
+//     echo "Conectado a la base de datos<br>";
+// } catch (Exception $e) {
+//     echo "Error de conexión a la base de datos<br>";
+//     echo $e->getMessage();
+//     exit;
+// }
+
 
 
 class base_datos
@@ -6,10 +16,10 @@ class base_datos
     //Es privada xq no quiero que nadi entre acá
     private $conexion;
 
-    function __construct()
+    function __construct($driver, $database, $host, $user, $pass)
     {
         //link de conexion a la base de datos
-        $conexion = new PDO('mysql:host=localhost:3306;port=3306 ; dbname=MIPROYECTO', 'root', '');
+        $conexion = new PDO($driver . ':dbname=' . $database . ';host=' . $host, $user, $pass);
 
         if ($conexion) {
             $this->conexion = $conexion;
@@ -20,7 +30,7 @@ class base_datos
 
     function select($tabla, $filtros = null, $arr_prepare = null, $orden = null, $limit = null)
     {
-        $sql = "SELECT * FROM  " . $tabla;
+        $sql = "SELECT * FROM " . $tabla;
         if ($filtros != null) {
             $sql .= " WHERE " . $filtros;
         }
@@ -49,7 +59,8 @@ class base_datos
         $resource = $this->conexion->prepare($sql);
         $resource->execute($arr_prepare);
         if ($resource) {
-            return true;
+            $this->conexion->lastInsertId();
+            return $resource->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo "error en la consulta";
             throw new Exception("Error al insertar");
@@ -62,20 +73,20 @@ class base_datos
         $resource = $this->conexion->prepare($sql);
         $resource->execute($arr_prepare);
         if ($resource) {
-            return true;
+            return $resource->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo "error en la consulta";
             throw new Exception("Error al eliminar");
         }
     }
 
-    function update($tabla, $campos, $filtros, $arr_prepare = null)
+    function update($tabla, $campos, $filtros, $valor, $arr_prepare = null)
     {
-        $sql = "UPDATE " . $tabla . " SET " . $campos . " WHERE " . $filtros;
+        $sql = "UPDATE " . $tabla . " SET " . $campos . ' = ' . $valor . " WHERE " . $filtros;
         $resource = $this->conexion->prepare($sql);
         $resource->execute($arr_prepare);
         if ($resource) {
-            return true;
+            return $resource->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo "error en la consulta";
             throw new Exception("Error al actualizar");
@@ -98,8 +109,3 @@ class base_datos
         }
     }
 }
-
-
-
-
-/* Sebastián Concheso */

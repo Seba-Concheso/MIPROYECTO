@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>Home</title>
+  </head>
+
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarColor02"
+        aria-controls="navbarColor02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.php">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./backend/productos.php">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./backend/categorias.php">Categorias</a>
+          </li>
+        </ul>
+        <div>
+          <img class="navbar-brand logo" src="../../MIPROYECTO/assets/img/logo.jpeg" alt="Logo" />
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-4 text-center">
+      <h2>Productos</h2>
+      <div class="row row-cols-1 row-cols-md-4 g-5">
+        <?php foreach ($productos as $produc) {  ?>
+        <div class="col">
+          <div class="card h-100 bg-dark">
+            <img src="<?php echo $produc['imagen']?>" class="card-img-top" alt="" />
+            <div class="card-body text-light">
+              <div class="card-title"><?php echo $produc['nombre_producto'] ?></div>
+              <h4 class="card-text">
+                $
+                <?php echo $produc['precio']?>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <?php } ?>
+      </div>
+    </div>
+    <footer class="footer bg-dark text-light text-center">
+      <div class="container py-3">
+        <img src="../../MIPROYECTO/assets/img/logo.jpeg" alt="Logo" class="footer-logo">
+        <p>&copy; <?php echo date("Y"); ?> Todos los derechos reservados</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Política de privacidad</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Términos de uso</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Aviso legal</a>
+          </li>
+        </ul>
+        <p>Desarrollado por Sebastián Concheso</p>
+      </div>
+    </footer>
+  </body>
+</html>

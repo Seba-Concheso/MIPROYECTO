@@ -3,28 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../MIPROYECTO/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../MIPROYECTO/assets/css/styles.css" />
     <title>Listado de categorías</title>
   </head>
-  <body>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../backend/productos.php">Productos</a>
+            </li>
+          </ul>
+          <div>
+            <img class="navbar-brand logo" src="../../../MIPROYECTO/assets/img/logo.jpeg" alt="Logo" />
+          </div>
+        </div>
+      </div>
+    </nav>
     <div>
       <center>
-        <table style="width: 600px">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($categorias as $categoria) {  ?>
-            <tr>
-              <td style="text-align: center"><?php echo $categoria ['id'] ?></td>
-              <td style="text-align: center"><?php echo $categoria ['nombre_categoria']?></td>
-            </tr>
-            <?php }?>
-          </tbody>
-        </table>
-        <a href="http://localhost/MIPROYECTO/backend/categorias.php?accion=agregar">Agregar</a>
+        <h2 class="text-dark">Categorías</h2>
+        <div class="div-table tabla-categorias">
+          <table class="table table-hover">
+            <thead>
+              <tr class="table-light">
+                <th scope="row">ID</th>
+                <th scope="row">Nombre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($categorias as $categoria) {  ?>
+              <tr class="table-light">
+                <td><?php echo $categoria['id'] ?></td>
+                <td><?php echo $categoria['nombre_categoria']?></td>
+              </tr>
+              <?php }?>
+            </tbody>
+          </table>
+          <a href="./view/categorias.html?accion=agregar">Agregar</a>
+          <div>
+            <span>Sebastián Concheso</span>
+          </div>
+        </div>
       </center>
     </div>
   </body>

@@ -3,36 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../MIPROYECTO/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../MIPROYECTO/assets/css/styles.css" />
     <title>Listado de productos</title>
   </head>
-  <body>
-    <div>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../backend/productos.php">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./backend/categorias.php">Categorias</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
       <center>
-        <table style="width: 600px">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Precio</th>
-              <th>Imagen</th>
-              <th>Categoría</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($productos as $prod) {  ?>
-            <tr>
-              <td style="text-align: center"><?php echo $prod ['id'] ?></td>
-              <td style="text-align: center"><?php echo $prod ['nombre_producto']?></td>
-              <td style="text-align: center"><?php echo $prod ['descripcion']?></td>
-              <td style="text-align: center"><?php echo $prod ["$", 'precio']?></td>
-              <td style="text-align: center"><?php echo $prod ['imagen']?></td>
-              <td style="text-align: center"><?php echo $prod ['nombre_categoria']?></td>
-            </tr>
-            <?php }?>
-          </tbody>
-        </table>
-        <a href="http://localhost/MIPROYECTO/backend/productos.php?accion=agregar">Agregar</a>
+        <h2 class="text-dark">Listado de roductos</h2>
+        <button type="button" class="btn btn-primary text-dark">
+          <a href="./view/productos.html?accion=agregar" class="text-dark">Agregar</a>
+        </button>
+        <div class="div-table">
+          <table class="table table-hover">
+            <thead>
+              <tr class="table-light">
+                <th scope="row">ID</th>
+                <th scope="row">Nombre</th>
+                <th scope="row">Descripción</th>
+                <th scope="row">Precio</th>
+                <th scope="row">Imagen</th>
+                <th scope="row">Categoría</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($productos as $prod) {  ?>
+              <tr class="table-light">
+                <td><?php echo $prod['id'] ?></td>
+                <td><?php echo $prod['nombre_producto']?></td>
+                <td class="description"><?php echo $prod['descripcion']?></td>
+                <td><?php echo $prod['precio']?></td>
+                <td class="columna-imagen">
+                  <img src="<?php echo $prod['imagen']?>" class="img-fluid border rounded" alt="" />
+                </td>
+                <td><?php echo $prod['categoria_id']?></td>
+              </tr>
+              <?php }?>
+            </tbody>
+          </table>
+        </div>
       </center>
     </div>
   </body>

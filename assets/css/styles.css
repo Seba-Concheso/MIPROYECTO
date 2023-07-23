@@ -1,0 +1,71 @@
+.columna-imagen {
+    max-width: 150px;
+  }
+  
+.div-table{
+    margin: 10px;
+    padding: 2rem;
+}
+
+.description {
+    font-size: 0.8rem;
+    color: #6c757d;
+    max-width: 350px;
+}
+
+.center{
+    align-items: center;
+}
+
+.card-img-top{
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    
+}
+
+.body{
+    background-color: linear-gradient(90deg,#f17b7b 0%, #ecdce5 80%);;
+}
+
+.tabla-categorias{
+    max-width: 25%;
+    margin: 15px;
+    padding: 2rem;
+    
+}
+
+.logo{
+    width: 55px;
+    height: 55px;
+
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px; /* Ajusta la altura según tus necesidades */
+    background-color: #343a40; /* Color de fondo */
+    color: #fff; /* Color del texto */
+  }
+  
+  .footer p {
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .footer a {
+    color: #fff; /* Color del enlace */
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline; /* Cambia el estilo al pasar el ratón sobre el enlace */
+  }
+
+.footer-logo {
+    width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto;
+    margin-bottom: 10px; /* Ajusta el margen según tus necesidades */
+  }
