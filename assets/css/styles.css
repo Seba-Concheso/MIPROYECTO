@@ -85,3 +85,11 @@
     margin-bottom: 0.5rem;
     justify-content: center;
   }
+
+.formulario{
+  max-width: 40%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

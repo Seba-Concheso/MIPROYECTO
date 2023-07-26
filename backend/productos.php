@@ -7,7 +7,7 @@
 //de esta manera cargo todas las clases con esa sola línea de código
 include '../class/autoload.php';
 
-if (isset($_POST['accion']) && $_POST['accion'] == 'guardar') {
+if (isset($_POST["accion"]) && $_POST["accion"] == "guardar") {
     $producto = new productos();
     $producto->nombre = $_POST['nombre_producto'];
     $producto->precio = $_POST['precio'];
@@ -16,22 +16,24 @@ if (isset($_POST['accion']) && $_POST['accion'] == 'guardar') {
     // $prducto->imagen = $_FILES['imagen'];
     $producto->guardar();
     llamarListado();
-    echo "guardado";
+    // echo "guardado";
     die();
 }
 if (isset($_GET['accion']) && $_GET['accion'] == 'agregar') {
-    include '../backend/view/productos.html';
+    include './view/productos.html';
     die();
+} else {
+    llamarListado();
 }
 
 
 function llamarListado()
 {
     $productos = productos::listar();
-    include '../backend/view/listas_productos.html';
+    include './view/listas_productos.html';
 }
-$productos = productos::listar();
-include './view/listas_productos.html';
+// $productos = productos::listar();
+// include './view/listas_productos.html';
 
 
 /* Sebastián Concheso */
